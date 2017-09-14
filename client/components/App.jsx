@@ -3,11 +3,12 @@ import {observer} from 'mobx-react'; // <-- That's store based magic, for now ju
 import AppStore from '../stores/AppStore';
 import AppBody from './AppBody';
 
-module.exports = observer(() => {
+module.exports = observer(() => { 
+    AppStore.populate();
     return (
         <main>
             <header>
-                <h1>{AppStore.exampleTitle}</h1>
+                <h1>{AppStore.title}</h1>
             </header>
             <AppBody Store={AppStore} />
         </main>
